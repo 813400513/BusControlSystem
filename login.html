@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>公交运行调度管理信息及仿真系统</title>
+  <link rel="stylesheet" href="./css/login.css" />
+  <script src="javascript/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("#subBtn").click(function(){
+			$.ajax({
+				url:"userlogin.php",
+				async:true,
+				data: $("#account").serialize(),
+				success:function(result){
+					$("#txtHint").html(result);
+					//alert(result);
+				}
+			});
+		});
+	});
+  </script>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <div id="notice-title" class="notice-title">
+	<ul>
+	  <li class="liclass seclet">
+		<a href="sign.html" class="aclass">登录</a>
+	  </li>
+	  <li class="liclass">
+		<a href="tiantian.html" class="aclass">张奕天</a>
+	  </li>
+	  <li class="liclass">
+		<a href="yueyue.html" class="aclass">郑钦月</a>
+	  </li>
+	  <li class="liclass">
+		<a href="sisi.html" class="aclass">陈思宇</a>
+	  </li>
+	  <li class="liclass">
+		<a href="huahua.html" class="aclass">高妍</a>
+	  </li>
+	</ul>
+  </div>
+  <div class="mod" id="mod-dl">
+	<div class="title-container">
+	  <div class="title">
+		<div class="t1">快乐喷泉大家族</div>
+		<div class="t2">登录</div>
+	  </div>
+	</div>
+    <div id="dl-container">
+	  <div id="dl">
+	    <form id="account">
+		  <input type="text" name="username" id="username" placeholder="用户名" />
+		  <input type="text" name="password" id="password" placeholder="密码" />
+	      <div id="txtHint"></div>
+		  <button type="button" id="subBtn" style="cursor:pointer">立即登录</button>	<!--<button>标签的默认type是"submit"-->
+        </form>
+		  <div class="footer">
+		    <div class="t1">听说你不是家族的成员？</div>
+		    <div class="t2" id="register"><a href="register.html">立即注册</a></div>
+		  </div>
+	  </div>
+    </div>
+  </div>
+</body>
+</html>
